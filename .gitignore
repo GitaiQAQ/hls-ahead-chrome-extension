@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+
+# Generated binary artwork is uploaded to the store/package outside Git.
+icons/
+output/imagegen/
+store-assets/**/*.png
+store-assets/**/*.jpg
+store-assets/**/*.jpeg
+store-assets/**/*.webp
