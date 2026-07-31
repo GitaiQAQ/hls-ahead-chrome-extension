@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HLS Ahead</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>HLS Ahead</h1>
+        <p id="status">正在读取状态…</p>
+      </div>
+      <label class="switch" title="启用当前页面">
+        <input id="enabled" type="checkbox">
+        <span></span>
+      </label>
+    </header>
+
+    <section class="stats">
+      <div><strong id="fetched">0</strong><span>已拉取</span></div>
+      <div><strong id="bytes">0 B</strong><span>数据量</span></div>
+      <div><strong id="failed">0</strong><span>失败</span></div>
+    </section>
+
+    <section>
+      <h2>最近发现</h2>
+      <div id="empty" class="empty">播放视频后，这里会出现 m3u8 地址。</div>
+      <ol id="manifests"></ol>
+    </section>
+
+    <details>
+      <summary>预拉取设置</summary>
+      <label>分片数量 <input id="maxSegments" type="number" min="1" max="50"></label>
+      <label>并发请求 <input id="concurrency" type="number" min="1" max="8"></label>
+      <label>单资源上限（MB） <input id="maxResourceMB" type="number" min="1" max="500"></label>
+      <button id="save">保存设置</button>
+    </details>
+
+    <button id="retry" class="primary">再次预拉取最近清单</button>
+    <p id="hint" class="hint"></p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

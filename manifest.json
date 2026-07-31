@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "HLS Ahead",
+  "version": "0.1.0",
+  "description": "发现页面中的 m3u8 请求，并提前拉取后续 HLS 分片。",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "HLS Ahead",
+    "default_popup": "popup.html"
+  }
+}
